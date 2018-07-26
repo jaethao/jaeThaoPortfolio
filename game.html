@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/gameStyle.css">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <!-- animation CSS shake -->
+    <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-96218391-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-96218391-1');
+    </script>
+
+    <title>Bruno's Dress up</title>
+  </head>
+  <body>
+    <!-- dress up game -->
+    <div id="gameBG">
+      <div class="container">
+        <h1 class="text-center">Dress Up Bruno </h1>
+        <h5 class="text-center" id="gamePara">Get him ready for the beach, park, or a party!</h5>
+        <p class="text-center">Please switch to screen width 900px or higher to play game.</p>
+        <br>
+        <div id="gameContent">
+        <div class="row">
+        <div class="col-lg-12">
+          <div id="scene" class="beach">
+          <!-- Canvas -->
+          <canvas id="c" width="1109px" height="750px">
+          </canvas>
+          </div>
+          <!-- Bruno -->
+            <img src="assets/images/bruno-body.png" id="bruno" width="500%" height="550%" hidden>
+          <!-- Scene buttons -->
+          <div id="sceneBtns">
+            <span>
+              <button id="beachBtn" type="button" class="btn btn-primary">Beach</button>
+            </span>
+            <span>
+              <button id="parkBtn" type="button" class="btn btn-success">Park</button>
+            </span>
+            <span>
+              <button id="partyBtn" type="button" class="btn btn-danger">Party</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+        <div class="card-header">
+            <span id="clothingsBtn" title="Bruno's Closet">
+              <img src="assets/images/shirticon.png" width="40px" data-toggle="collapse" href="#clothings" aria-expanded="false" aria-controls="clothings">
+            </span>
+          <span id="refreshBtn" title="Refresh">
+            <i class="fas fa-sync-alt fa-2x"></i>
+          </span>
+          <span id="deleteBtn" title="Delete">
+            <i class="fas fa-trash-alt fa-2x"></i>
+          </span>
+          <span id="saveBtn" title="Download">
+            <i class="far fa-save fa-2x"></i>
+          </span>
+        </div>
+        <div class="collapse" id="clothings">
+        <div class="card-body card scroll">
+<div class="row">
+  <div class="col-md-12">
+
+    <div class="row">
+      <div class="col-lg-6">
+        <img src="assets/images/clothings/blackshoes.png" id="blackShoes" class="img-fluid">
+        <p>Black shoes</p>
+      </div>
+      <div class="col-lg-6">
+        <img src="assets/images/clothings/bluesneaker.png" id="blueSneakers" class="img-fluid">
+        <p>Blue Sneakers</p>
+      </div>
+    </div>
+
+      <div class="row">
+          <div class="col-lg-4">
+            <img src="assets/images/clothings/blacktuxpant.png" id="blackTuxPants" class="img-fluid">
+          <p>Black Tuxedo Pants</p>
+        </div>
+          <div class="col-lg-4">
+            <img src="assets/images/clothings/bluejeans.png" id="blueJeans" class="img-fluid">
+          <p>Blue Jeans</p>
+        </div>
+        <div class="col-lg-4">
+          <img src="assets/images/clothings/blueshirt.png" id="blueShirt" class="img-fluid">
+          <p>Blue Shirt</p>
+      </div>
+    </div>
+
+    <div class="row">
+          <div class="col-lg-4">
+            <img src="assets/images/clothings/brownpants.png" id="brownPants" class="img-fluid">
+          <p>Brown Pants</p>
+        </div>
+        <div class="col-lg-4">
+          <img src="assets/images/clothings/grayhoodie.png" id="grayHoodie" class="img-fluid">
+          <p>Gray Hoodie</p>
+      </div>
+        <div class="col-lg-4">
+          <img src="assets/images/clothings/grayshort.png" id="grayShort" class="img-fluid">
+        <p>Gray Short</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <img src="assets/images/clothings/duckfloatie.png" id="duckFloatie" class="img-fluid">
+        <p>Duck Floatie</p>
+      </div>
+      <div class="col-lg-6">
+        <img src="assets/images/clothings/gladiatorsandal.png" id="gladSandal" class="img-fluid">
+        <p>Gladiator Sandals</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <img src="assets/images/clothings/orangebathingsuit.png" id="orangeBathingSuit" class="img-fluid">
+        <p>Orange Bathing Suit</p>
+      </div>
+      <div class="col-lg-6">
+        <img src="assets/images/clothings/redheels.png" id="redHeels" class="img-fluid">
+        <p>Red Heels</p>
+      </div>
+    </div>
+
+    <div class="row">
+          <div class="col-lg-4">
+            <img src="assets/images/clothings/redshort.png" id="redShort" class="img-fluid">
+            <p>Red Short</p>
+        </div>
+          <div class="col-lg-4">
+            <img src="assets/images/clothings/redplaidsweater.png" id="plaidSweater" class="img-fluid">
+          <p>Red Plaid Sweater</p>
+        </div>
+        <div class="col-lg-4">
+          <img src="assets/images/clothings/tutu.png" id="tutu" class="img-fluid">
+          <p>Tutu</p>
+      </div>
+    </div>
+
+    <div class="row">
+          <div class="col-lg-4">
+            <img src="assets/images/clothings/tuxtop.png" id="tuxedoTop" class="img-fluid">
+          <p>Tuxedo Top</p>
+        </div>
+          <div class="col-lg-4">
+            <img src="assets/images/clothings/whitetshirt.png" id="whiteTshirt" class="img-fluid">
+            <p>White Tee Shirt</p>
+        </div>
+          <div class="col-lg-4">
+            <img src="assets/images/clothings/redbowtie.png" id="redBowTie" class="img-fluid">
+          <p>Red Polka-dot Bow Tie</p>
+        </div>
+  </div>
+  </div>
+</div>
+    </div>
+        </div>
+      </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+      <p class="text-center">Maiyer Thao &copy; 2018</p>
+    </footer>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Fabric JS -->
+    <script src="assets/js/fabric.min.js"></script>
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+    <!-- JS logic -->
+    <script src="assets/js/logic.js"></script>
+  </body>
+</html>
